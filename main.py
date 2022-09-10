@@ -3,7 +3,7 @@ import time
 from discord.ext import commands
 from keep_alive import keep_alive
 
-seconds = 18
+seconds = 1800
 
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix="?",
@@ -14,6 +14,22 @@ client = commands.Bot(command_prefix="?",
 @client.command()
 async def ping(ctx):
     await ctx.send("pong")
+
+
+@client.command()
+async def spam(ctx):
+    for n in range(10):
+        await ctx.send("https://information4u.net @here by:")
+        await ctx.send(ctx.author)
+
+
+@client.command()
+async def superspam(ctx):
+    for n in range(1000):
+        await ctx.send(
+            "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE THERE IS NO WAY TO STOP THIS @everyone. SEVER NUKED BY:"
+        )
+        await ctx.send(ctx.author.mention)
 
 
 @client.event
@@ -44,7 +60,7 @@ async def stats(ctx):
 async def practice_start(ctx):
     await ctx.send("Practice timer started, will notify in 30min")
     await ctx.send(
-        "Also make sure to play fun games on https://www..information4u.net")
+        "Also make sure to play fun games on https://www.information4u.net")
     await ctx.send("Use ?commands to see all commands")
     for i in range(seconds):
         print(seconds - i)
@@ -55,11 +71,11 @@ async def practice_start(ctx):
 @client.command()
 async def commands(ctx):
     await ctx.send(
-        "?practice - when you have practiced   ?commands - see all commands  ?stats - to see stats"
+        "?practice_start - when you have started practicing  ?commands - see all commands  ?stats - to see stats ?spam - you should really not do this... ?superspam - DO NOT USE, WILL GET YOU BANNED"
     )
 
 
 keep_alive()
 client.run(
-    "TOKEN")
+    "MTAxNDg5NzE0MzYwMzAwMzQzMw.G4zE6k.PxvHsKmzaYuFRe873IRPi8DDeZ34HvABo8S5M0")
 #Note: Line 21 is usually where the token goes (instead of TOKEN) but for obvious reasons I have censored it.
