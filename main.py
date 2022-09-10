@@ -77,5 +77,5 @@ async def commands(ctx):
 
 keep_alive()
 client.run(
-    "MTAxNDg5NzE0MzYwMzAwMzQzMw.G4zE6k.PxvHsKmzaYuFRe873IRPi8DDeZ34HvABo8S5M0")
+    "TOKEN")
 #Note: Line 21 is usually where the token goes (instead of TOKEN) but for obvious reasons I have censored it.
