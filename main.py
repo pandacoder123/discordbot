@@ -3,7 +3,8 @@ import time
 from discord.ext import commands
 from keep_alive import keep_alive
 
-seconds = 1800
+seconds = 1
+times_used = 0
 
 intents = discord.Intents.all()
 client = commands.Bot(command_prefix="?",
@@ -11,9 +12,7 @@ client = commands.Bot(command_prefix="?",
                       intents_members=True)
 
 
-@client.command()
-async def ping(ctx):
-    await ctx.send("pong")
+
 
 
 @client.command()
@@ -27,7 +26,7 @@ async def spam(ctx):
 async def superspam(ctx):
     for n in range(1000):
         await ctx.send(
-            "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE THERE IS NO WAY TO STOP THIS @everyone. SEVER NUKED BY:"
+            "EEEEEEEEEEEE𝔼𝔼𝔼𝔼𝔼𝔼EEEEEEEEEEEEEE𝔼𝔼𝔼𝔼𝔼𝔼𝔼𝔼𝔼𝔼𝔼 THERE IS NO WAY TO STOP THIS @everyone. SEVER NUKED BY:"
         )
         await ctx.send(ctx.author.mention)
 
@@ -66,6 +65,9 @@ async def practice_start(ctx):
         print(seconds - i)
         time.sleep(1)
     await ctx.send("Practicing Finshed!!! @here")
+    global times_used
+    times_used = times_used + 1
+
 
 
 @client.command()
@@ -73,6 +75,11 @@ async def commands(ctx):
     await ctx.send(
         "?practice_start - when you have started practicing  ?commands - see all commands  ?stats - to see stats ?spam - you should really not do this... ?superspam - DO NOT USE, WILL GET YOU BANNED"
     )
+
+@client.command()
+async def _ping(ctx):
+  await ctx.send(times_used)
+  
 
 
 keep_alive()
