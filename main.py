@@ -12,7 +12,12 @@ client = commands.Bot(command_prefix="?",
                       intents_members=True)
 
 
-
+@client.command()
+async def info(ctx):
+    await ctx.send("Hello I am practice bot")
+    await ctx.send("I will help you practice more")
+    await ctx.send("By: Panos")
+    await ctx.send("Use ?commands to see all commands")
 
 
 @client.command()
@@ -44,15 +49,14 @@ async def on_ready():
 #         i = i + 1
 #         print('hi')
 
+# @client.command()
+# async def stats(ctx):
 
-@client.command()
-async def stats(ctx):
-
-    await client.change_presence(
-        activity=discord.Game('You better be practing...'))
-    await ctx.send("Practice Bot version 1.0 by Panos")
-    await ctx.send("Type ?commands to see all commands")
-    print("Practice bot is up.")
+#     await client.change_presence(
+#         activity=discord.Game('You better be practing...'))
+#     await ctx.send("Practice Bot version 1.0 by Panos")
+#     await ctx.send("Type ?commands to see all commands")
+#     print("Practice bot is up.")
 
 
 @client.command()
@@ -69,20 +73,35 @@ async def practice_start(ctx):
     times_used = times_used + 1
 
 
-
 @client.command()
 async def commands(ctx):
+    await ctx.send("Command list")
+    await ctx.send("1. ?practice start -- When you have practiced")
     await ctx.send(
-        "?practice_start - when you have started practicing  ?commands - see all commands  ?stats - to see stats ?spam - you should really not do this... ?superspam - DO NOT USE, WILL GET YOU BANNED"
-    )
+        "2. ?stats -- See how many times everyone has practiced total")
+    await ctx.send("3. ?commands -- See all commands")
+    await ctx.send("-- SPECIAL COMMANDS --")
+    await ctx.send("4. ?spam -- Do not use it is very annoying")
+    await ctx.send(
+        "5. ?superspam -- DO NOT USE YOU WILL GET BANNED (why did i add this)")
+    # await ctx.send(
+    #     "?practice_start - when you have started practicing  ?commands - see all commands  ?stats - to see stats ?spam - you should really not do this... ?superspam - DO NOT USE, WILL GET YOU BANNED"
+    # )
+
 
 @client.command()
-async def _ping(ctx):
-  await ctx.send(times_used)
-  
+async def stats(ctx):
+    await client.change_presence(
+        activity=discord.Game('You better be practing...'))
+    await ctx.send("Practice Bot version 1.0 by Panos")
+    await ctx.send("Type ?commands to see all commands")
+    print("Practice bot is up.")
+    await ctx.send("Also, in total we have all practiced:")
+    await ctx.send(times_used)
+    await ctx.send("times")
 
 
 keep_alive()
 client.run(
-    "TOKEN")
+    "MTAxNDg5NzE0MzYwMzAwMzQzMw.Gbivmt.9FwJMga2XokYM6sJHK9BlS-HzZ0UDRBG6XuJ9c")
 #Note: Line 21 is usually where the token goes (instead of TOKEN) but for obvious reasons I have censored it.
