@@ -18,6 +18,13 @@ async def info(ctx):
     await ctx.send("I will help you practice more")
     await ctx.send("By: Panos")
     await ctx.send("Use ?commands to see all commands")
+    await ctx.send(
+        "Also keep in mind that I am slow at sending messages so when sending a commands wait a few seconds so i can process it"
+    )
+    await ctx.send(
+        "If there is anything not working or you want to send me an idea, ping me at @pan521"
+    )
+    await ctx.send("If you want to view the code dm me")
 
 
 @client.command()
@@ -80,10 +87,13 @@ async def commands(ctx):
     await ctx.send(
         "2. ?stats -- See how many times everyone has practiced total")
     await ctx.send("3. ?commands -- See all commands")
+    await ctx.send(
+        "4. ?stats -- See how many times we have all in total practiced")
     await ctx.send("-- SPECIAL COMMANDS --")
     await ctx.send("4. ?spam -- Do not use it is very annoying")
     await ctx.send(
-        "5. ?superspam -- DO NOT USE YOU WILL GET BANNED (why did i add this)")
+        "5. ..--.. ... ..- .--. . .-. ... .--. .- -- -- DO NOT USE YOU WILL GET BANNED (why did i add this)"
+    )
     # await ctx.send(
     #     "?practice_start - when you have started practicing  ?commands - see all commands  ?stats - to see stats ?spam - you should really not do this... ?superspam - DO NOT USE, WILL GET YOU BANNED"
     # )
@@ -99,9 +109,13 @@ async def stats(ctx):
     await ctx.send("Also, in total we have all practiced:")
     await ctx.send(times_used)
     await ctx.send("times")
+    await ctx.send("Or")
+    await ctx.send("We have practiced a total of")
+    await ctx.send(times_used * 30)
+    await ctx.send("minutes")
 
 
 keep_alive()
 client.run(
-    "token")
+    "")
 #Note: Line 21 is usually where the token goes (instead of TOKEN) but for obvious reasons I have censored it.
