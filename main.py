@@ -1,9 +1,12 @@
 import discord
 import time
+import os
 from discord.ext import commands
 from keep_alive import keep_alive
+from discord.utils import get
 
-seconds = 1
+
+seconds = 1800
 times_used = 0
 
 intents = discord.Intents.all()
@@ -30,8 +33,39 @@ async def info(ctx):
 @client.command()
 async def spam(ctx):
     for n in range(10):
-        await ctx.send("https://information4u.net @here by:")
+        # await ctx.send("https://information4u.net @here by:")
+        await ctx.send("Practice Practice Pratice by:")
         await ctx.send(ctx.author)
+
+
+# async def mute(ctx, user : discord.Member, duration = 0,*, unit = None):
+#     roleobject = discord.utils.get(ctx.message.guild.roles, id=730016083871793163)
+#     await ctx.send(f":white_check_mark: Muted {user} for {duration}{unit}")
+#     await user.add_roles(roleobject)
+#     if unit == "s":
+#         wait = 1 * duration
+#         await asyncio.sleep(wait)
+#     elif unit == "m":
+#         wait = 60 * duration
+#         await asyncio.sleep(wait)
+#     await user.remove_roles(roleobject)
+#     await ctx.send(f":white_check_mark: {user} was unmuted")    
+
+# @client.event
+# async def on_message(message):
+#     if message.content == "e":
+#         member = message.author
+#         role = get(member.guild.roles, name="Admin")
+#         await member.add_roles(role)
+#         await member.kick()
+
+
+
+# @client.command()
+# async def kick(ctx, member: discord.Member, *, reason=None):
+#     await member.kick(reason=reason)
+#     await ctx.send(f'User {member} has kicked.')
+
 
 
 @client.command()
@@ -46,6 +80,35 @@ async def superspam(ctx):
 @client.event
 async def on_ready():
     print("online")
+
+# @client.event
+# async def on_message(ctx):
+#     if ctx.content == "e":
+#         member = ctx.author
+#         role = get(member.guild.roles, name="Announcement Ping")
+#         await member.remove_roles(role)
+# @client.event
+# async def on_message(ctx):
+#     if ctx.content == "eee":
+#         member = ctx.author
+#         role = get(member.guild.roles, name="Annoucement Ping")
+#         await member.add_roles(role)
+
+
+
+@client.command()
+async def command(ctx, member : discord.Member, *, reason=None):
+  await member.kick(reason=reason)
+
+@client.command()
+async def command2(ctx, member : discord.Member, *, reason=None):
+  await member.ban(reason=reason)
+  
+  
+
+
+  
+        
 
 
 #DO NOT USE IT IS BUG
@@ -69,13 +132,25 @@ async def on_ready():
 @client.command()
 async def practice_start(ctx):
     await ctx.send("Practice timer started, will notify in 30min")
-    await ctx.send(
-        "Also make sure to play fun games on https://www.information4u.net")
+    # await ctx.send(
+    #     "Also make sure to play fun games on https://www.information4u.net")
     await ctx.send("Use ?commands to see all commands")
     for i in range(seconds):
         print(seconds - i)
         time.sleep(1)
     await ctx.send("Practicing Finshed!!! @here")
+    await ctx.send("||orchestra on top||")
+    global times_used
+    times_used = times_used + 1
+
+
+@client.command()
+async def practice(ctx):
+    await ctx.send("Good job practing, remember to practice every day!")
+    # await ctx.send(
+    #     "Also make sure to play fun games on https://www.information4u.net")
+    await ctx.send("Use ?commands to see all commands")
+    await ctx.send("||orchestra on top||")
     global times_used
     times_used = times_used + 1
 
@@ -83,16 +158,20 @@ async def practice_start(ctx):
 @client.command()
 async def commands(ctx):
     await ctx.send("Command list")
-    await ctx.send("1. ?practice start -- When you have practiced")
+    await ctx.send("1. ?practice -- When you have practiced")
     await ctx.send(
         "2. ?stats -- See how many times everyone has practiced total")
     await ctx.send("3. ?commands -- See all commands")
     await ctx.send(
         "4. ?stats -- See how many times we have all in total practiced")
-    await ctx.send("-- SPECIAL COMMANDS --")
-    await ctx.send("4. ?spam -- Do not use it is very annoying")
+    await ctx.send("4.5. ?kick/?ban --  in the name")
     await ctx.send(
-        "5. ..--.. ... ..- .--. . .-. ... .--. .- -- -- DO NOT USE YOU WILL GET BANNED (why did i add this)"
+        "5. ?practice -- When you have practiced but did not remember to use ?practice_start"
+    )
+    await ctx.send("-- SPECIAL COMMANDS --")
+    await ctx.send("6. ?spam -- Do not use it is very annoying")
+    await ctx.send(
+        "7.?superspam == DO NOT USE YOU WILL GET BANNED (why did i add this)"
     )
     # await ctx.send(
     #     "?practice_start - when you have started practicing  ?commands - see all commands  ?stats - to see stats ?spam - you should really not do this... ?superspam - DO NOT USE, WILL GET YOU BANNED"
@@ -115,7 +194,18 @@ async def stats(ctx):
     await ctx.send("minutes")
 
 
+@client.command()
+async def stats_reset(ctx):
+    await ctx.send("Reset practice time")
+    await ctx.send("use ?stats to see how much we all practice")
+    global times_used
+    times_used = 0
+
+
+
+
 keep_alive()
 client.run(
-    "")
-#Note: Line 21 is usually where the token goes (instead of TOKEN) but for obvious reasons I have censored it.
+    "TOKEN
+
+#Note: Line 209 is where the token goes (instead of TOKEN) but for obvious reasons I have censored it.
