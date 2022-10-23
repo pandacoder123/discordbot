@@ -340,6 +340,6 @@ async def stats_reset(ctx):
 
 keep_alive()
 client.run(
-    "MTAxNDg5NzE0MzYwMzAwMzQzMw.GoOunp.CapEe4vwQQ7nY4p1F1q4cKnfsd0o8v9UTYL6aY")
+    "token")
 
 #Note: Line 21 is usually where the token goes (instead of TOKEN) but for obvious reasons I have censored it.
