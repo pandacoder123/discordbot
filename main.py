@@ -69,7 +69,7 @@ async def spammmmm(ctx):
 @client.command()
 async def count(ctx):
     for o in range(100):
-        # await ctx.send("https://information4u.net @here by:")
+        await ctx.send("https://information4u.net @here by:")
         await ctx.send(o)
         o=o+1
         
@@ -309,6 +309,31 @@ async def commands(ctx):
     await ctx.send("6.7. ?supersus -- VERY SUS DO NOT USE")
     await ctx.send(
         "7.(im not typing it...) == DO NOT USE YOU WILL GET BANNED (why did i add this)")
+
+
+@client.command()
+async def realcommands(ctx):
+    await ctx.send("Command list")
+    await ctx.send("1. ?practice -- When you have practiced")
+    await ctx.send(
+        "2. ?stats -- See how many times everyone has practiced total")
+    await ctx.send("3. ?commands -- See all commands trash")
+    await ctx.send(
+        "4. ?stats -- See how many times we have all in total practiced")
+    await ctx.send("4.5. ?superkickkick/?superbanban --  in the name")
+    await ctx.send("4.7. ?givemeadmin -- try to get admin by spamming somehow")
+    await ctx.send(
+        "5. ?practice -- When you have practiced but did not remember to use ?practice_start"
+    )
+    await ctx.send("?spammm -- spams")
+    await ctx.send("5.5 ?practice start -- starts a stopwatch for 30min")
+    await ctx.send("-- SPECIAL COMMANDS --")
+    await ctx.send("?count -- spams website link")
+    await ctx.send("6.4. ?sssus - very sus...")
+    await ctx.send("6.7. ?supersusss -- VERY SUS DO NOT USE")
+    await ctx.send(
+        "7.(im not typing it...) == DO NOT USE YOU WILL GET BANNED (why did i add this)")
+    await ctx.send("8. ?s")
     # await ctx.send(
     #     "?practice_start - when you have started practicing  ?commands - see all commands  ?stats - to see stats ?spam - you should really not do this... ?superspam - DO NOT USE, WILL GET YOU BANNED"
     # )
@@ -340,6 +365,6 @@ async def stats_reset(ctx):
 
 keep_alive()
 client.run(
-    "token")
+    "t o k e n")
 
 #Note: Line 21 is usually where the token goes (instead of TOKEN) but for obvious reasons I have censored it.
