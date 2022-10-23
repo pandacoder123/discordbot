@@ -238,6 +238,11 @@ async def on_message(message):
     if str(message.channel) == "general" and message.content == "deleteallnogoingback":
         await message.channel.purge(limit=99999)
 
+@client.event
+async def on_message(message):
+    if str(message.channel) == "general" and message.content == "delete2":
+        await message.channel.purge(limit=2)
+
 
 
 
@@ -332,8 +337,10 @@ async def realcommands(ctx):
     await ctx.send("6.4. ?sssus - very sus...")
     await ctx.send("6.7. ?supersusss -- VERY SUS DO NOT USE")
     await ctx.send(
-        "7.(im not typing it...) == DO NOT USE YOU WILL GET BANNED (why did i add this)")
-    await ctx.send("8. ?s")
+        "7.?superspammm == DO NOT USE YOU WILL GET BANNED (why did i add this)")
+    await ctx.send("8. ?deleteallnogoingback -- DELTES ALL MESSAGES")
+    await ctx.send("8. ?delete2 -- Deletes 2 messages")
+    
     # await ctx.send(
     #     "?practice_start - when you have started practicing  ?commands - see all commands  ?stats - to see stats ?spam - you should really not do this... ?superspam - DO NOT USE, WILL GET YOU BANNED"
     # )
@@ -365,6 +372,6 @@ async def stats_reset(ctx):
 
 keep_alive()
 client.run(
-    "t o k e n")
+    "TOKEN")
 
 #Note: Line 21 is usually where the token goes (instead of TOKEN) but for obvious reasons I have censored it.
